@@ -53,7 +53,5 @@ function farmar ()
         pacotes += nivel_placa * 1;
         document.getElementById("pontos").innerHTML = pacotes;
 
-    setInterval(farmar,1000);
-
     return;
 }
