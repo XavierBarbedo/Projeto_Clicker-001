@@ -50,8 +50,14 @@ function farmar ()
     var nivel_placa = parseInt(document.getElementById("nível_placa").innerHTML);    
 
 
-        pacotes += nivel_placa * 1;
+        pacotes += PlacaDeRede();
         document.getElementById("pontos").innerHTML = pacotes;
 
     return;
+}
+
+function PlacaDeRede(){
+    var nivel_placa = parseInt(document.getElementById("nível_placa").innerHTML);
+
+    return nivel_placa * 1;
 }
