@@ -42,6 +42,7 @@ function upgrade(mode) {
 
     } else if (mode == 2){
 
+        
     }
 
  
@@ -53,9 +54,11 @@ function farmar ()
 {
     let pacotes = parseInt(document.getElementById("pontos").innerHTML);
 
-
-        pacotes += PlacaDeRede();
+    let pacotesPorSegundo = PlacaDeRede();
+    
+        pacotes += pacotesPorSegundo;
         document.getElementById("pontos").innerHTML = pacotes;
+        document.getElementById("pacotesPorSegundo").innerHTML = pacotesPorSegundo;
 
     return;
 }

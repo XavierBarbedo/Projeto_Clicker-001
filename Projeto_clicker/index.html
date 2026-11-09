@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicker</title>
 
-    <script src="./script.js"></script>
-    <link rel="stylesheet" href="./styles.css">
+    <script src="./js/script.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
 
 
 
@@ -15,16 +15,20 @@
     
 
     <div>
-        <input type="button" value="ciscalhador" onclick="touching()">
+        <button" value="ciscalhador" onclick="touching()">
+            <img src="./assets/images/Cisco_Cancer2-4.webp" alt="cisca" id="cisca"> </button>
         <br>
         <a id="label"> pacotes:</a>  
         <a id="pontos">0</a>
+        <br>
+        <a id="label"> pacotes por segundo:</a>
+        <a id="pacotesPorSegundo">0</a>
     </div>
 
     <div id="upgrades">
         <input type="button" value="Placa de rede: 5 pacotes" onclick="upgrade(1)" id="Shop_Placa">
         <br>
-        <a id="label_Placa"> nível:</a>  
+        <a id="label_Placa"> quantidade:</a>  
         <a id="nível_placa">0</a>
         
 
