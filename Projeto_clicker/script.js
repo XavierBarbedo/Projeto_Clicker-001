@@ -1,5 +1,5 @@
 function touching() {
-    var pacotes = parseInt(document.getElementById("pontos").innerHTML);
+    let pacotes = parseInt(document.getElementById("pontos").innerHTML);
 
     //var upgrade multiplier
 
@@ -11,13 +11,13 @@ function touching() {
 
 
 function upgrade() {
-    var pacotes = parseInt(document.getElementById("pontos").innerHTML);
+    let pacotes = parseInt(document.getElementById("pontos").innerHTML);
 
-    var nivel_placa = parseInt(document.getElementById("nível_placa").innerHTML);
+    let nivel_placa = parseInt(document.getElementById("nível_placa").innerHTML);
 
-    var preco;
+    let preco;
 
-    var price_modifier = 5.6967;
+    let price_modifier = 5.6967;
 
 
     if (nivel_placa == 0) {
@@ -46,8 +46,7 @@ function upgrade() {
 
 function farmar () 
 {
-    var pacotes = parseInt(document.getElementById("pontos").innerHTML);
-    var nivel_placa = parseInt(document.getElementById("nível_placa").innerHTML);    
+    let pacotes = parseInt(document.getElementById("pontos").innerHTML);
 
 
         pacotes += PlacaDeRede();
@@ -57,7 +56,10 @@ function farmar ()
 }
 
 function PlacaDeRede(){
-    var nivel_placa = parseInt(document.getElementById("nível_placa").innerHTML);
+    let nivel_placa = parseInt(document.getElementById("nível_placa").innerHTML);
+    let lucro = 1;
 
-    return nivel_placa * 1;
+
+
+    return nivel_placa * lucro;
 }
