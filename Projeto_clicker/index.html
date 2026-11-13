@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,35 +12,63 @@
 
 
 </head>
-<body onLoad="setInterval(farmar,1000);">
-    
+
+<body onLoad="iniciarLoja()">
+
 
     <div>
-        <button" value="ciscalhador" onclick="touching()">
+        <button value="ciscalhador" onclick="touching()">
             <img src="./assets/images/Cisco_Cancer2-4.webp" alt="cisca" id="cisca"> </button>
-        <br>
-        <a id="label"> pacotes:</a>  
-        <a id="pontos">0</a>
-        <br>
-        <a id="label"> pacotes por segundo:</a>
-        <a id="pacotesPorSegundo">0</a>
+            <br>
+            <a id="label"> pacotes:</a>
+            <a id="pontos">0</a>
+            <br>
+            <p>Pacotes por segundo: <span id="pacotesPorSegundo">0</span></p>
     </div>
 
     <div id="upgrades">
         <input type="button" value="Placa de rede: 5 pacotes" onclick="upgrade(1)" id="Shop_Placa">
         <br>
-        <a id="label_Placa"> quantidade:</a>  
+        <a id="label_Placa"> quantidade:</a>
         <a id="nível_placa">0</a>
-        
+        <br><br>
+
+        <input type="button" value="Switch: 25 pacotes" onclick="upgrade(2)" id="Shop_Switch">
+        <br>
+        <a id="label_Switch"> quantidade:</a>
+        <a id="nível_switch">0</a>
+        <br><br>
+
+        <input type="button" value="Router: 120 pacotes" onclick="upgrade(3)" id="Shop_Router">
+        <br>
+        <a id="label_Router"> quantidade:</a>
+        <a id="nível_router">0</a>
+        <br><br>
+
+        <input type="button" value="DNS Server: 600 pacotes" onclick="upgrade(4)" id="Shop_DNS">
+        <br>
+        <a id="label_DNS"> quantidade:</a>
+        <a id="nível_dns">0</a>
+        <br><br>
+
+        <input type="button" value="Cabo de fibra ótica: 3000 pacotes" onclick="upgrade(5)" id="Shop_Fibra">
+        <br>
+        <a id="label_Fibra"> quantidade:</a>
+        <a id="nível_fibra">0</a>
     </div>
 
-    <div id="perfil">
-        <p>Username</p>
-        <input type="text" name="Username" id="Username">
-        <button style="margin-left: 127px;">Confirmar</button>
+    <div id="zonaLogin">
+        <input type="text" id="nomeUtilizador" placeholder="Nome de utilizador">
+        <input type="button" id="btnLogin" value="Entrar" onclick="iniciarSessao()">
+        <p id="mensagemLogin"></p>
+    </div>
 
+    <div id="zonaUtilizador" style="display: none;">
+        <span id="nomeApresentado"></span>
+        <input type="button" value="Sair" onclick="terminarSessao()">
     </div>
 
 
 </body>
+
 </html>
