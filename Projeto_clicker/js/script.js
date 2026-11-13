@@ -31,11 +31,9 @@ function comprar(idNivel, idBotao, nome, precoInicial, multiplicador) {
         document.getElementById("pontos").innerHTML = pacotes;
         document.getElementById(idNivel).innerHTML = nivel;
 
-        // Recalcula o próximo preço para o botão
         preco = calcularPreco(nivel, precoInicial, multiplicador);
         document.getElementById(idBotao).value = " " + nome + ": " + preco + " pacotes";
 
-        // Atualiza imediatamente o visor de pacotes por segundo
         document.getElementById("pacotesPorSegundo").innerHTML = calcularPacotesPorSegundo();
     }
 }
