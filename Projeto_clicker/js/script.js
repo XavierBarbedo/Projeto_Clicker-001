@@ -1,6 +1,6 @@
 function touching() {
     let pacotes = parseInt(document.getElementById("pontos").innerHTML);
-    pacotes += 1;
+    pacotes += GetClickPower();
     document.getElementById("pontos").innerHTML = pacotes;
 }
 
@@ -50,6 +50,37 @@ function upgrade(mode) {
     } else if (mode == 5) {
         comprar("nível_fibra", "Shop_Fibra", "Cabo de fibra ótica", 3000, 5.6967);
     }
+}
+
+function GetClickPower() {
+    
+    let clickPower = parseInt(document.getElementById("nível_clique").innerHTML);
+    
+
+    
+    return clickPower;
+}
+
+function atualizarClique() {
+
+
+    let clickPower = parseInt(document.getElementById("nível_clique").innerHTML);
+    let pacotes = parseInt(document.getElementById("pontos").innerHTML); 
+    let preco = Math.pow(2, clickPower); //= formula matematica 
+
+    document.getElementById("Shop_Clique").value = "Clique Upgrade: " + preco + " pacotes";
+    
+    if (pacotes >= preco)
+    {
+        pacotes -= preco;
+        clickPower += 1;
+
+        preco = Math.pow(2, clickPower); //= formula matematica 
+        document.getElementById("Shop_Clique").value = "Clique Upgrade: " + preco + " pacotes";
+    } 
+
+      document.getElementById("nível_clique").innerHTML = clickPower;
+      document.getElementById("pontos").innerHTML = pacotes;
 }
 
 function farmar() {
@@ -160,5 +191,4 @@ function terminarSessao() {
 ⣤⣤⣤⣤⣤⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⣿⡿⠿⠿⡿⢿⡟⠉⣱⢧⡾⡷⠗⠛⠋⠀⠀⠉⠭⣡⠴⠿⣭⠉⠉⣯⠛⢧⡄⠀⠀⠀⠒⠖⠒⠀⡾⠓⠀⣐⡒⠂⠐⠒
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⡇⠀⠀⠉⠈⠉⠉⣧⠎⠀⢀⣿⠞⠀⡇⠀⠀⠀⢀⡤⠖⡻⠀⠀⠀⡟⠒⢒⡇⣀⠀⠉⣦⡀⠐⠂⠀⠀⡜⠁⠀⠄⠀⠀⠀⠀⠀
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡧⢀⡇⠀⠠⠤⠀⢀⡴⠃⠉⠉⡽⠋⠍⢉⣩⠭⡟⠋⡏⢉⡽⠏⠉⣏⡉⠉⢁⡉⡏⠈⡇⠉⣀⠈⠧⡖⠂⠘⠀⠀⠀⠀⠀⠀⠀⠀⠀
-6767676767676767676767676767676767676767676767676767676767676767
 **/
