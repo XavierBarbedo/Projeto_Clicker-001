@@ -92,34 +92,72 @@ function farmar() {
     document.getElementById("pacotesPorSegundo").innerHTML = pacotesPorSegundo;
 }
 
+function comprarEficiencia(idEficiencia, idBotao, nome, precoInicial, multiplicador) {
+    let pacotes = parseInt(document.getElementById("pontos").innerHTML);
+    let eficiencia = parseInt(document.getElementById(idEficiencia).innerHTML);
+    let preco = calcularPreco(eficiencia - 1, precoInicial, multiplicador);
+
+    if (pacotes >= preco) {
+        pacotes -= preco;
+        eficiencia += 1;
+
+        document.getElementById("pontos").innerHTML = pacotes;
+        document.getElementById(idEficiencia).innerHTML = eficiencia;
+
+        let proximoPreco = calcularPreco(eficiencia - 1, precoInicial, multiplicador);
+        document.getElementById(idBotao).value = nome + ": " + proximoPreco + " pacotes";
+
+        document.getElementById("pacotesPorSegundo").innerHTML = calcularPacotesPorSegundo();
+    }
+}
+
+function upgradeEficiencia(mode) {
+    if (mode == 1) {
+        comprarEficiencia("eficiencia_placa", "Shop_EficienciaPlaca", "Eficiência Placa", 50, 4.0);
+    } else if (mode == 2) {
+        comprarEficiencia("eficiencia_switch", "Shop_EficienciaSwitch", "Eficiência Switch", 250, 4.0);
+    } else if (mode == 3) {
+        comprarEficiencia("eficiencia_router", "Shop_EficienciaRouter", "Eficiência Router", 1200, 4.0);
+    } else if (mode == 4) {
+        comprarEficiencia("eficiencia_dns", "Shop_EficienciaDNS", "Eficiência DNS", 6000, 4.0);
+    } else if (mode == 5) {
+        comprarEficiencia("eficiencia_fibra", "Shop_EficienciaFibra", "Eficiência Fibra", 30000, 4.0);
+    }
+}
+
 function PlacaDeRede() {
     let nivel_placa = parseInt(document.getElementById("nível_placa").innerHTML);
+    let ef = parseInt(document.getElementById("eficiencia_placa").innerHTML);
     let lucro = 1;
-    return nivel_placa * lucro;
+    return nivel_placa * (lucro * ef);
 }
 
 function Switch() {
     let nivel_switch = parseInt(document.getElementById("nível_switch").innerHTML);
+    let ef = parseInt(document.getElementById("eficiencia_switch").innerHTML);
     let lucro = 4;
-    return nivel_switch * lucro;
+    return nivel_switch * (lucro * ef);
 }
 
 function Router() {
     let nivel_router = parseInt(document.getElementById("nível_router").innerHTML);
+    let ef = parseInt(document.getElementById("eficiencia_router").innerHTML);
     let lucro = 15;
-    return nivel_router * lucro;
+    return nivel_router * (lucro * ef);
 }
 
 function DnsServer() {
     let nivel_dns = parseInt(document.getElementById("nível_dns").innerHTML);
+    let ef = parseInt(document.getElementById("eficiencia_dns").innerHTML);
     let lucro = 60;
-    return nivel_dns * lucro;
+    return nivel_dns * (lucro * ef);
 }
 
 function CaboDeFibraOtica() {
     let nivel_fibra = parseInt(document.getElementById("nível_fibra").innerHTML);
+    let ef = parseInt(document.getElementById("eficiencia_fibra").innerHTML);
     let lucro = 250;
-    return nivel_fibra * lucro;
+    return nivel_fibra * (lucro * ef);
 }
 
 function iniciarSessao() {
